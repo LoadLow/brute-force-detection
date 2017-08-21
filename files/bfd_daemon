@@ -1,9 +1,10 @@
 #!/bin/bash
 
+INSTALL_PATH="/usr/local/bfd"
 INTERVAL=10
 
-ipset restore < /root/firewall/lists/bfd_black.ipset &> /dev/null
-ipset restore < /usr/local/bfd/whitelist.ipset
+ipset restore < "$INSTALL_PATH/bfd_black.ipset" &> /dev/null
+ipset restore < "$INSTALL_PATH/bfd_white.ipset" &> /dev/null
 
 echo "Running bfd every $INTERVAL seconds..."
 while true
