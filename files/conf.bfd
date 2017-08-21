@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+# installation path
+INSTALL_PATH="/usr/local/bfd"
+
 # BFD 1.5-2 <bfd@rfxn.com>
 # Copyright (C) 1999-2014, R-fx Networks <proj@r-fx.org>
 # Copyright (C) 2014, Ryan MacDonald <ryan@r-fx.org>
@@ -24,14 +27,11 @@ EMAIL_ADDRESS="root"
 EMAIL_SUBJECT="Brute Force Warning for $HOSTNAME"
 
 # executable command to block attacking hosts
-BAN_COMMAND="/etc/apf/apf -d $ATTACK_HOST {bfd.$MOD}"
+BAN_COMMAND="$INSTALL_PATH/bfd_ban.bash \"$ATTACK_HOST\" 2> /dev/null"
 
 ######
 # You should not need to edit any options below this line
 ######
-
-# installation path
-INSTALL_PATH="/usr/local/bfd"
 
 # rule files path
 RULES_PATH="$INSTALL_PATH/rules"
@@ -58,7 +58,7 @@ OUTPUT_SYSLOG_FILE="$KERNEL_LOG_PATH"
 EMAIL_TEMPLATE="$INSTALL_PATH/alert.bfd"
 
 # contains list of files to search for addresses that are excluded from bans
-IGNORE_HOST_FILES="$INSTALL_PATH/exclude.files"
+#IGNORE_HOST_FILES="$INSTALL_PATH/exclude.files"
 
 # grab the local time zone
 TIME_ZONE=`date +"%z"`
