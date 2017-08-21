@@ -52,9 +52,9 @@ install(){
 		cp uninstall.sh $INSPATH/
 		chmod 750 $INSPATH/uninstall.sh
 	fi
-	if [ -f "cron" ]; then
-		cp cron /etc/cron.d/bfd
-		chmod 644 /etc/cron.d/bfd
+	if [ -f "init.bfd" ]; then
+		cp init.bfd /etc/init.d/bfd
+		chmod 644 /etc/init.d/bfd
 	fi
 }
 
@@ -62,6 +62,7 @@ postinfo(){
 	echo ".: BFD installed"
 	echo "Install path:    $INSPATH"
 	echo "Config path:     $INSPATH/conf.bfd"
+	echo "Service path:    /etc/init.d/bfd"
 	echo "Executable path: $BINPATH"
 }
 
