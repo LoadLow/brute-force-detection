@@ -1,0 +1,1 @@
+create bfd_black hash:ip family inet hashsize 16384 maxelem 65536 timeout 604800
