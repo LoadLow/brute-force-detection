@@ -54,7 +54,7 @@ install(){
 	fi
 	if [ -f "init.bfd" ]; then
 		cp init.bfd /etc/init.d/bfd
-		chmod 644 /etc/init.d/bfd
+		chmod +x /etc/init.d/bfd
 	fi
 	chmod 644 $INSPATH/bfd_ban.bash
 }
