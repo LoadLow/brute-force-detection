@@ -56,6 +56,7 @@ install(){
 		cp init.bfd /etc/init.d/bfd
 		chmod 644 /etc/init.d/bfd
 	fi
+	chmod 644 $INSPATH/bfd_ban.bash
 }
 
 postinfo(){
