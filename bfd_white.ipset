@@ -1,0 +1,3 @@
+create bfd_white hash:net family inet hashsize 16384 maxelem 65536 
+
+add bfd_white 127.0.0.1
