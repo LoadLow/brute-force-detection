@@ -29,7 +29,7 @@ echo "Press any key to continue or ^C to abort."
 read val
 
 if [ -d "$INSPATH" ]; then
-	rm -rf $INSPATH $BINPATH /etc/cron.d/bfd /etc/logrotate.d/bfd /var/log/bfd_log
+	rm -rf $INSPATH $BINPATH /etc/cron.d/bfd /etc/init.d/bfd /etc/logrotate.d/bfd /var/log/bfd_log
 	echo "$APPN has been uninstalled."
 else
 	echo "$APPN does not appear to be installed."
